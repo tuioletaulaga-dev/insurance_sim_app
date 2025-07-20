@@ -6,12 +6,13 @@ import matplotlib.pyplot as plt
 st.title("Life Insurance Simulation with Lapses")
 
 # --- User Inputs via Sliders ---
-num_policies = st.slider("Number of Policies", min_value=100, max_value=10000, value=1000, step=100)
-num_trials = st.slider("Number of Trials", min_value=100, max_value=5000, value=1000, step=100)
-policy_term = st.slider("Policy Term (years)", min_value=1, max_value=50, value=20)
-start_age = st.slider("Starting Age", min_value=20, max_value=90, value=40)
-death_benefit = st.slider("Death Benefit", min_value=1000, max_value=1000000, value=100000, step=1000)
-discount_rate = st.slider("Discount Rate", min_value=0.00, max_value=0.20, value=0.06, step=0.005)
+with st.sidebar:
+    num_policies = st.slider("Number of Policies", min_value=100, max_value=10000, value=1000, step=100)
+    num_trials = st.slider("Number of Trials", min_value=100, max_value=5000, value=1000, step=100)
+    policy_term = st.slider("Policy Term (years)", min_value=1, max_value=50, value=20)
+    start_age = st.slider("Starting Age", min_value=20, max_value=90, value=40)
+    death_benefit = st.slider("Death Benefit", min_value=1000, max_value=1000000, value=100000, step=1000)
+    discount_rate = st.slider("Discount Rate", min_value=0.00, max_value=0.20, value=0.06, step=0.005)
 
 # --- Mortality and lapse assumptions ---
 qx_dict = {age: min(0.0005 + 0.0001 * (age - start_age), 0.2) for age in range(start_age, start_age + policy_term + 1)}
