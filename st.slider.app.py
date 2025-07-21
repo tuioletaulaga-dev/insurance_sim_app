@@ -17,7 +17,7 @@ investment_rate = st.sidebar.slider("Investment Rate (Premiums)", 0.00, 0.10, 0.
 mortality_multiplier = st.sidebar.slider("Mortality Multiplier", 0.5, 2.0, 1.0, step=0.1)
 lapse_multiplier = st.sidebar.slider("Lapse Multiplier", 0.5, 2.0, 1.0, step=0.1)
 death_benefit = st.sidebar.slider("Death Benefit", 100_000, 2_000_000, 1_000_000, step=50_000)
-annual_premium = st.sidebar.slider("Annual Policy Premium", 0, 1000, 500, step=1)
+annual_premium = st.sidebar.slider("Annual Policy Premium", 0, 5000, 500, step=1)
 
 run_button = st.sidebar.button("Run Simulation")
 
