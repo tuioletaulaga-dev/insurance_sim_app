@@ -40,7 +40,7 @@ mortality_qx = [
     0.00616, 0.00667, 0.00722, 0.00782, 0.00847, 0.00918, 0.00994, 0.01077
 ]
 
-def run_sim(...):
+def run_sim(num_policies, num_trials, discount_rate, investment_rate, mortality_multiplier, lapse_multiplier, death_benefit, annual_premium):
     qx_dict = dict(zip(range(40, 66), [q * mortality_multiplier for q in mortality_qx]))
     lapse_dict = dict(zip(range(1, 31), [l / 100 * lapse_multiplier for l in lapse_rates]))
     
